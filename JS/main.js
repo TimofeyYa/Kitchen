@@ -39,6 +39,11 @@ window.addEventListener('DOMContentLoaded', ()=>{
         blackHeader[i]-=50;
     }
 
+    let sostavPlus = 600;
+
+    if (window.screen.width < 600){
+        sostavPlus = -220;
+    }
     console.log(whiteHeader,blackHeader);
     window.addEventListener('scroll', ()=>{
         console.log(sostav.offsetTop);
@@ -86,8 +91,10 @@ window.addEventListener('DOMContentLoaded', ()=>{
             header__logo.src = './Source/other/logo.png';
         }
 
-        if (window.scrollY > sostav.offsetTop + 600){
-            sostav__left.classList.add('animate__end');sostav__right
+
+
+        if (window.scrollY > sostav.offsetTop + sostavPlus){
+            sostav__left.classList.add('animate__end');
             sostav__right.classList.add('animate__end');
         }
 
